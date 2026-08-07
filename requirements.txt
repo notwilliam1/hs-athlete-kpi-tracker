@@ -1,0 +1,5 @@
+sqlmodel == 0.0.39
+pandas == 3.0.5
+pythondotenv == 1.2.2
+pyinstaller == 6.21.0
+customtkinter == 6.0.0
