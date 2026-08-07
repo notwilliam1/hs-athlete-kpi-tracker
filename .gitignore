@@ -1,0 +1,12 @@
+venv/
+
+# dbs
+*.db
+
+# py cache
+__pycache__/
+*.py[cod]
+
+# ide
+.vscode/
+.idea/
