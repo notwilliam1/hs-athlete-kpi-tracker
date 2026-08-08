@@ -1,24 +1,12 @@
-from typing import Optional
-from datetime import date
-from sqlmodel import SQLModel, Field, Relationship
+from sqlmodel import SQLModel, create_engine, Session
 
-class Athlete(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    name: str
-    sport: str
-    coach_email: str
-    pt_email: Optional[str] = None
+sqlite_file_name = "tracker.db"
+sqlite_url = f"sqlite:///{sqlite_file_name}"
 
-    logs: list["DailyLog"] = Relationship(back_populates="athlete")
+engine = create_engine(sqlite_url, echo=True)
 
-class DailyLog(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    athlete_id: int = Field(foreign_key="athlete.id")
-    entry_date: date
+def init_db():
+    SQLModel.metadata.create_all(engine)
 
-    duration_minutes: int
-    rpe: int #scale 1-10 for rate of percieved exertion
-    sleep_hours: float
-    soreness_level: int #scale 1-5 for muscle soreness
-
-    athlete: Optional[Athlete] = Relationship(back_populates="logs")
+def get_session():
+    return Session(engine)
