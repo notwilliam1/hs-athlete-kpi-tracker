@@ -3,6 +3,7 @@ from database.db_engine import get_session
 from database.models import DailyLog
 from analytics.risk_calc import eval_athlete_risk
 
+# temporary ui for athlete view
 class AthleteCheckInView(ctk.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
