@@ -1,7 +1,7 @@
 import pandas as pd
 from sqlmodel import select
 from database.db_engine import get_session
-from database.models import DailyLog
+from database.models import Athlete, DailyLog
 
 def get_athlete_df(athlete_id: int) -> pd.DataFrame:
     with get_session() as session:
@@ -51,5 +51,31 @@ def eval_athlete_risk(athlete_id: int, df_override: pd.DataFrame = None) -> dict
         "athlete_id": athlete_id,
         "status": status,
         "acwr": round(latest['acwr'], 2),
-        "alerts": alerts    
+        "alerts": alerts
     }
+
+def get_coach_dashboard_rows() -> list[dict]:
+    with get_session() as session:
+        athletes = session.exec(select(Athlete)).all()
+        athlete_infos = [(a.id, a.name, a.sport) for a in athletes]
+
+    rows = []
+    for athlete_id, name, sport in athlete_infos:
+        df = get_athlete_df(athlete_id)
+        risk = eval_athlete_risk(athlete_id, df_override=df)
+        latest = None if df.empty else df.iloc[-1]
+
+        rows.append({
+            "athlete_id": athlete_id,
+            "name": name,
+            "sport": sport,
+            "last_entry_date": latest["entry_date"] if latest is not None else None,
+            "duration_minutes": latest["duration_minutes"] if latest is not None else None,
+            "rpe": latest["rpe"] if latest is not None else None,
+            "sleep_hours": latest["sleep_hours"] if latest is not None else None,
+            "soreness_level": latest["soreness_level"] if latest is not None else None,
+            "acwr": risk.get("acwr"),
+            "status": risk["status"],
+            "alerts": risk["alerts"],
+        })
+    return rows
