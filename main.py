@@ -1,8 +1,17 @@
 import customtkinter as ctk
 from ui.athlete_view import AthleteCheckInView
+from database.db_engine import init_db
+from database.seed import seed_sample_data
 
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
+
+init_db()
+seeded = seed_sample_data()
+if seeded:
+    print("Seeded sample athletes (use these IDs in Check-In):")
+    for athlete in seeded:
+        print(f"  {athlete.id}: {athlete.name} ({athlete.sport})")
 
 class AppUI(ctk.CTk):
     def __init__(self):
