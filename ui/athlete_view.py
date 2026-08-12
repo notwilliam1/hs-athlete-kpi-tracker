@@ -69,9 +69,6 @@ class AthleteCheckInView(ctk.CTkFrame):
         except ValueError:
             errors.append("Date must be in YYYY-MM-DD format.")
             return None
-        if parsed > date.today():
-            errors.append("Date cannot be in the future.")
-            return None
         return parsed
 
     def _parse_int_field(
