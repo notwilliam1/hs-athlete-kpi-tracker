@@ -20,7 +20,7 @@ class AppUI(ctk.CTk):
         super().__init__()
 
         self.title("Athlete KPI Tracker & Risk Assessment")
-        self.geometry("800x600")
+        self.geometry("1200x600")
 
         # tab view nav
         self.tabview = ctk.CTkTabview(self, command=self._on_tab_change)
