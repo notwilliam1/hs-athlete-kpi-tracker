@@ -1,6 +1,6 @@
 # Athlete KPI Tracker & Risk Assessment
 
-A desktop app for coaches to log athlete training data and flag injury risk before it becomes an injury. Built around the **Acute:Chronic Workload Ratio (ACWR)**, a sports-science metric that compares an athlete's recent (7-day) training load against their longer-term (28-day) baseline to catch dangerous spikes in workload.
+A desktop app for high school coaches to log athlete training data and flag injury risk before it becomes an injury. Built around the **Acute: Chronic Workload Ratio (ACWR)**, a sports science metric that compares an athlete's recent (7-day) training load against their longer term (28-day) baseline to catch dangerous spikes in workload.
 
 ![Coach Dashboard screenshot placeholder](docs/coach_table_view.png)
 
@@ -8,7 +8,7 @@ A desktop app for coaches to log athlete training data and flag injury risk befo
 
 ## Why this exists
 
-Coaches and PTs track training volume by feel more often than by data due to not having the resources that college/professional coaches have. ACWR gives an accessible evidence-based signal: when an athlete's short-term load spikes well above their chronic baseline, injury risk rises sharply. This app turns that signal into something a coach can actually see and act on, day to day.
+High school Coaches and PTs track training volume by feel more often than by data due to not having the resources that college/professional coaches have. ACWR gives an accessible evidence-based signal: when an athlete's short-term load spikes well above their chronic baseline, injury risk rises sharply. This app turns that signal into something a coach can actually see and act on, day to day.
 
 ## Features
 
