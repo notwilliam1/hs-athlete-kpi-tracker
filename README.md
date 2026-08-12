@@ -10,7 +10,7 @@ A desktop app for coaches to log athlete training data and flag injury risk befo
 
 ## Why this exists
 
-Coaches and PTs track training volume by feel more often than by data. ACWR gives a simple, evidence-based signal: when an athlete's short-term load spikes well above their chronic baseline, injury risk rises sharply. This app turns that signal into something a coach can actually see and act on, day to day.
+Coaches and PTs track training volume by feel more often than by data due to not having the resources that college/professional coaches have. ACWR gives an accessible evidence-based signal: when an athlete's short-term load spikes well above their chronic baseline, injury risk rises sharply. This app turns that signal into something a coach can actually see and act on, day to day.
 
 ## Features
 
