@@ -2,11 +2,9 @@
 
 A desktop app for coaches to log athlete training data and flag injury risk before it becomes an injury. Built around the **Acute:Chronic Workload Ratio (ACWR)**, a sports-science metric that compares an athlete's recent (7-day) training load against their longer-term (28-day) baseline to catch dangerous spikes in workload.
 
-<!-- TODO: add a screenshot or GIF of the Coach Dashboard here -->
-![Coach Dashboard screenshot placeholder](docs/coach-dashboard.png)
+![Coach Dashboard screenshot placeholder](docs/coach_table_view.png)
 
-<!-- TODO: add a GIF of the Add Athlete -> Check-In -> Dashboard flow here -->
-![App walkthrough GIF placeholder](docs/walkthrough.gif)
+![App walkthrough GIF placeholder](docs/add_athlete_flow.gif)
 
 ## Why this exists
 
